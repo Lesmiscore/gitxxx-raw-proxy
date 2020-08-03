@@ -4,6 +4,6 @@
     "silent": true
   },
   "routes": [
-      { "src": "/api/(?<service>[^/]+)/(?<user>[^/]+)/(?<repo>[^/]+)/(?<ref>[^/]+)/(?<path>.+)", "dest": "/api/$service/$user/$repo/$ref?path=$path"}
+    { "src": "/api/(?<service>[^/]+)/(?<user>[^/]+)/(?<repo>[^/]+)/(?<ref>[^/]+)/(?<path>.+)", "dest": "/api/$service/$user/$repo/$ref?path=$path"}
   ]
 }
