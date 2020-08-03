@@ -2,7 +2,7 @@ const axios = require("axios");
 
 module.exports = (req, res) => {
   const { user, repo, ref } = req.query;
-  const path = req.path;
+  const path = req.path || req.query.path || "";
   axios(
     `https://api.bitbucket.org/2.0/repositories/${user}/${repo}/commits/${ref}`,
     {
