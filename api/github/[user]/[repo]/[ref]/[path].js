@@ -13,7 +13,10 @@ module.exports = (req, res) => {
         responseType: "stream",
       })
     )
-    .then((response) => {
+    .then((response) => response.data.pipe(res))
+    .catch(({ response }) => {
+      res.status(404);
       response.data.pipe(res);
-    });
+    })
+    .finally(() => res.end());
 };
