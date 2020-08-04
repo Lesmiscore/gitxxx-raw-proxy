@@ -14,6 +14,5 @@ module.exports = (req, res) => {
       })
     )
     .then((response) => response.data.pipe(res))
-    .catch(({ response }) => response.data.pipe(res.status(404)))
-    .finally(() => res.end());
+    .catch(({ response }) => response.data.pipe(res.status(404)));
 };
